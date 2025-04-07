@@ -6,17 +6,16 @@ export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <header className="flex items-center justify-between px-8 py-6 border-b border-[#dcdad3] bg-white relative">
+    <header className="flex items-center justify-between px-8 py-6 pr-[140px] border-b border-[#dcdad3] bg-white relative">
       <div className="text-[18px] font-bold">Travelsy</div>
 
-      <nav className="hidden md:flex gap-6 text-[13px] text-gray-700">
-        <a href="#">Camping Locations</a>
-        <a href="#">Activities</a>
-        <a href="#">Equipment</a>
-        <a href="#">Blogs</a>
-      </nav>
-
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 ">
+        <nav className="hidden md:flex gap-6 mr-18 text-[13px] text-gray-700">
+          <a href="#">Camping Locations</a>
+          <a href="#">Activities</a>
+          <a href="#">Equipment</a>
+          <a href="#">Blogs</a>
+        </nav>
         <button className="bg-[#FF5200]  flex text-[13px] items-center text-white px-4 py-2 rounded-2xl text-sm">
           <BiBookmark className="mr-2" />
           Reservations
@@ -47,7 +46,7 @@ export default function Header() {
                 alt="User"
                 className="w-8 h-8 object-cover rounded-full"
               />
-              {/* Notification dot */}
+
               <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
             </div>
             <BiChevronDown className="text-lg" />

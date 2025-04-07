@@ -1,7 +1,8 @@
-import Header from "./components/Header";
-import FindExperience from "./components/FindExperience";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import FindExperience from "./components/FindExperience/FindExperience";
+import Testimonials from "./components/Testimonials/Testimonials";
+import Footer from "./components/Footer/Footer";
+import FooterLower from "./components/FooterLower/FooterLower";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <FindExperience />
       <Testimonials />
       <Footer />
+      <FooterLower />
     </div>
   );
 }

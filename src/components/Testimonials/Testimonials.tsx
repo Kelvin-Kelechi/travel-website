@@ -1,39 +1,7 @@
 import { useState } from "react";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
-import { motion} from "framer-motion";
-
-const testimonialData = [
-  {
-    title: "Best User Experience",
-    text: "Because the rock was laid down in layers, there is a variation in the hardness of the rock formed...",
-    name: "Derek Dunn",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    title: "Highly Recommend",
-    text: "The platform is intuitive and easy to use. I love the attention to detail and customer support.",
-    name: "Jessica Smith",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    title: "Great Support Team",
-    text: "Whenever I had issues, the support team was responsive and solved my problem within minutes.",
-    name: "Marcus Ray",
-    img: "https://randomuser.me/api/portraits/men/50.jpg",
-  },
-  {
-    title: "Super Fast Delivery",
-    text: "Got everything I ordered earlier than expected. That's impressive!",
-    name: "Laura Prince",
-    img: "https://randomuser.me/api/portraits/women/12.jpg",
-  },
-  {
-    title: "Will Use Again",
-    text: "The experience was smooth from start to finish. I’ll definitely be a returning customer.",
-    name: "Samuel Bright",
-    img: "https://randomuser.me/api/portraits/men/80.jpg",
-  },
-];
+import { motion } from "framer-motion";
+import { testimonialData } from "./data";
 
 export default function Testimonials() {
   const [startIndex, setStartIndex] = useState(0);
@@ -56,10 +24,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-[#F8F8F8] py-20 px-4 font-[Mulish] overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#F8F8F8] py-20 px-18 font-[Mulish] overflow-hidden">
+      <div className="max-w-7xl  px-18">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-          {/* Heading and Arrows */}
           <div className="w-full md:w-1/3">
             <span className="text-[#9B9B9B] text-[14px] uppercase">
               Testimonial
@@ -93,7 +60,6 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Carousel Testimonials */}
           <div className="relative w-full md:w-2/3 overflow-hidden">
             <motion.div
               className="flex gap-6"
