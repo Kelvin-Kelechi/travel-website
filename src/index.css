@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Apply globally */
+* {
+  font-family: 'Mulish','Didot', sans-serif;
+}
+ h1, h2, h3 {
+  font-family: 'Didot', 'Mulish', sans-serif;
+}
