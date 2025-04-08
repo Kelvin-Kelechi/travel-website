@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import { motion } from "framer-motion";
 import { testimonialData } from "./data";
 
 export default function Testimonials() {
   const [startIndex, setStartIndex] = useState(0);
-  const itemsPerPage = 2;
+  const [itemsPerPage, setItemsPerPage] = useState(2); // default to 2 for larger screens
+
+  // Adjust the number of items per page based on screen width
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setItemsPerPage(1); // Show one item on mobile
+      } else {
+        setItemsPerPage(2); // Show two items on larger screens
+      }
+    };
+
+    handleResize(); // Set initial value based on current screen size
+    window.addEventListener("resize", handleResize); // Adjust items on resize
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Clean up event listener
+    };
+  }, []);
 
   const visibleTestimonials = testimonialData.slice(
     startIndex,
@@ -24,14 +42,14 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-[#F8F8F8] py-20 px-18 font-[Mulish] overflow-hidden">
-      <div className="max-w-7xl  px-18">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-          <div className="w-full md:w-1/3">
+    <section className="bg-[#F8F8F8] py-12 px-6 sm:px-12 font-[Mulish] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-16">
+        <div className="flex flex-col sm:flex-row justify-between items-start gap-8">
+          <div className="w-full sm:w-1/3">
             <span className="text-[#9B9B9B] text-[14px] uppercase">
               Testimonial
             </span>
-            <h2 className="text-[50px] leading-[60px] font-bold mt-6">
+            <h2 className="text-[32px] sm:text-[50px] leading-[40px] sm:leading-[60px] font-bold mt-6">
               What
               <br /> customers <br />
               <span className="text-[#FF5200]">say about us.</span>
@@ -60,9 +78,9 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <div className="relative w-full md:w-2/3 overflow-hidden">
+          <div className="relative w-full sm:w-2/3 overflow-hidden">
             <motion.div
-              className="flex gap-6"
+              className="flex gap-6 sm:gap-8"
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -50, opacity: 0 }}
@@ -72,7 +90,7 @@ export default function Testimonials() {
               {visibleTestimonials.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[357px] h-[318px] bg-white border border-gray-100 shadow-sm p-6 rounded-md flex flex-col justify-between"
+                  className="w-full sm:w-[357px] h-[318px] bg-white border border-gray-100 shadow-sm p-6 rounded-md flex flex-col justify-between"
                 >
                   <div>
                     <h3 className="text-[16px] font-[600] font-[Didot] mb-4">
