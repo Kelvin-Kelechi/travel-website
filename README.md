@@ -21,5 +21,5 @@ This is a minimal and performant **Travel Experience Booking Platform** built wi
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/travel-website.git
+git clone https://github.com/Kelvin-Kelechi/travel-website.git
 cd travel-website
